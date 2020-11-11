@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/ui/shop/Shop.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/font/RussoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+extra_spacing_char = 3
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Assets/font/RussoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+extra_spacing_char = 3
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Assets/font/RussoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+extra_spacing_char = 1
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Assets/font/RussoOne-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 29
+extra_spacing_char = 3
+font_data = SubResource( 7 )
+
+[node name="Shop" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 999.0
+margin_bottom = 551.0
+custom_constants/separation = 12
+
+[node name="BackButton" type="Button" parent="VBox"]
+margin_left = 914.0
+margin_right = 974.0
+margin_bottom = 26.0
+size_flags_horizontal = 8
+custom_fonts/font = SubResource( 2 )
+shortcut_in_tooltip = false
+text = "back"
+flat = true
+
+[node name="ShopVBox" type="VBoxContainer" parent="VBox"]
+margin_top = 38.0
+margin_right = 974.0
+margin_bottom = 203.0
+custom_constants/separation = 32
+
+[node name="ShopCenter" type="CenterContainer" parent="VBox/ShopVBox"]
+margin_right = 974.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBox/ShopVBox/ShopCenter"]
+margin_left = 431.0
+margin_right = 542.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+text = "SHOP"
+
+[node name="WarningLabel" type="Label" parent="VBox/ShopVBox"]
+margin_top = 77.0
+margin_right = 974.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 6 )
+align = 1
+
+[node name="ItemsCenter" type="CenterContainer" parent="VBox/ShopVBox"]
+margin_top = 129.0
+margin_right = 974.0
+margin_bottom = 165.0
+
+[node name="ItemsVBox" type="VBoxContainer" parent="VBox/ShopVBox/ItemsCenter"]
+margin_left = 262.0
+margin_right = 711.0
+margin_bottom = 36.0
+
+[node name="Items" type="GridContainer" parent="VBox/ShopVBox/ItemsCenter/ItemsVBox"]
+margin_right = 449.0
+margin_bottom = 36.0
+custom_constants/vseparation = 12
+custom_constants/hseparation = 56
+columns = 4
+
+[node name="ItemsLabel" type="Label" parent="VBox/ShopVBox/ItemsCenter/ItemsVBox/Items"]
+margin_right = 98.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 0.972549, 0.686275, 1 )
+text = "Items"
+
+[node name="PriceLabel" type="Label" parent="VBox/ShopVBox/ItemsCenter/ItemsVBox/Items"]
+margin_left = 154.0
+margin_right = 242.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 0.972549, 0.686275, 1 )
+text = "Price"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StockLabel" type="Label" parent="VBox/ShopVBox/ItemsCenter/ItemsVBox/Items"]
+margin_left = 298.0
+margin_right = 393.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 0.972549, 0.686275, 1 )
+text = "Stock"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Filler" type="Label" parent="VBox/ShopVBox/ItemsCenter/ItemsVBox/Items"]
+margin_left = 449.0
+margin_top = 11.0
+margin_right = 449.0
+margin_bottom = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBox/BackButton" to="." method="_on_BackButton_pressed"]
