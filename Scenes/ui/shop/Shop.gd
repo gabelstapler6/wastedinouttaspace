@@ -3,7 +3,6 @@ extends MarginContainer
 signal go_back
 signal buy_item(item_name)
 
-onready var popup = $VBox/ShopVBox/ItemsCenter/PopupNotification
 onready var items_grid = $VBox/ShopVBox/ItemsCenter/ItemsVBox/Items
 onready var warning_label = $VBox/ShopVBox/WarningLabel
 
