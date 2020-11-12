@@ -159,6 +159,8 @@ func item_bought(item_name):
 	# db.update_player_scoreBalance(player.score)
 	gui.update_score_tag(PlayerInventory.score_balance)
 	gui.shop.update_shop(item_name, stock, "Stock")
+	if item_name == "RageMode":
+		gui.shop.warning_label.text = "use RageMode with the 'R' Key"
 	if item_name == "VerticalMovement":
 		gui.shop.vertical_movement_bought()
 
