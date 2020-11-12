@@ -219,7 +219,7 @@ func load_game():
 
 		for key in node_data:
 				PlayerInventory.set(key, node_data[key])
-
+				
 	save.close()
 
 
@@ -237,7 +237,7 @@ func login_received(data):
 		for key in data["game_save"]:
 			# load playersave from server
 			PlayerInventory.set(key, data["game_save"][key])
-			
+		update_ammo_price()
 		gui.setup_gui()
 		gui.show_gui()	
 	else:
